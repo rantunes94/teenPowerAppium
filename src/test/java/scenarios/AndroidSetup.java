@@ -59,7 +59,7 @@ public class AndroidSetup {
         String result = driver.findElementById("android:id/alertTitle").getText();
 
         //driver.findElement(alert);
-
+      //
         Assert.assertEquals("Falha na Autenticação",result);
         //new WebDriverWait(driver, 5);
     }
