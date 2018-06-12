@@ -20,7 +20,8 @@ public class TestCaseLoginFalhado3 {
 
     @BeforeTest
     protected void prepareAndroidForAppium() throws MalformedURLException {
-        File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+        //File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+        File appDir = new File("C:\\Users\\Ruben\\Desktop\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
         File app = new File(appDir, "app-debug.apk");
 
         // Capabilites
@@ -28,7 +29,8 @@ public class TestCaseLoginFalhado3 {
         capabilities.setCapability("device","Android");
 
         //mandatory capabilities
-        capabilities.setCapability("deviceName","Nexus 4 API 22");
+        //capabilities.setCapability("deviceName","Nexus 4 API 22");
+        capabilities.setCapability("deviceName","appAndroid");
         capabilities.setCapability("platformName","Android");
 
         //other caps
@@ -47,19 +49,15 @@ public class TestCaseLoginFalhado3 {
         driver.findElement(password).sendKeys("testvagrant123");
         //driver.findElement(showPassword).click();
         driver.findElement(login_Button).click();
-/*        driver.switchTo().alert();
-        driver.wait(20000);
-        String result = driver.findElementById("android:id/alertTitle").getText();
+        driver.findElement(userId).click();
 
-        Assert.assertEquals("Falha na Autenticação",result);
-        */
-        By alert = By.id("android:id/alertTitle");
+        //By alert = By.id("android:id/alertTitle");
         Thread.sleep(5000);
-        String result = driver.findElementById("android:id/alertTitle").getText();
+        String result = driver.findElementById("android:name/error_field_required").getText();
 
         //driver.findElement(alert);
         //
-        Assert.assertEquals("Falha na Autenticação",result);
+        Assert.assertEquals("Este campo é obrigatório",result);
         //new WebDriverWait(driver, 5);
     }
 }
