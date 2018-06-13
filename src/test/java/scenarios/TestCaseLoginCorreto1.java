@@ -15,7 +15,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class TestCaseLoginFalhado1 {
+public class TestCaseLoginCorreto1 {
     protected AndroidDriver driver;
 
     @BeforeTest
@@ -42,26 +42,16 @@ public class TestCaseLoginFalhado1 {
         String app_package_name = "pt.ipleiria.teenpowerapp:id/";
         By userId = By.id(app_package_name + "editTextName");
         By password = By.id(app_package_name + "editTextUsername");
-//        By showPassword = By.id(app_package_name + "show_password");
         By login_Button = By.id(app_package_name + "buttonLogIn");
 
-        driver.findElement(userId).sendKeys("someone@testvagrant.com");
-        driver.findElement(password).sendKeys("testvagrant123");
-        //driver.findElement(showPassword).click();
+        driver.findElement(userId).sendKeys("Testes01");
+        driver.findElement(password).sendKeys("password");
         driver.findElement(login_Button).click();
-/*        driver.switchTo().alert();
-        driver.wait(20000);
-        String result = driver.findElementById("android:id/alertTitle").getText();
 
-        Assert.assertEquals("Falha na Autenticação",result);
+        /*
+        By save = By.name("android:name/save");
+        Thread.sleep(2000);
+        driver.findElement(save).click();
         */
-        By alert = By.id("android:id/alertTitle");
-        Thread.sleep(5000);
-        String result = driver.findElementById("android:id/alertTitle").getText();
-
-        //driver.findElement(alert);
-        //
-        Assert.assertEquals("Falha na Autenticação",result);
-        //new WebDriverWait(driver, 5);
     }
 }
