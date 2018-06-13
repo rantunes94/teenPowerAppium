@@ -15,7 +15,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class TestCaseLoginCorreto1 {
+public class TestCaseLoginCorreto2 {
     protected AndroidDriver driver;
 
     @BeforeTest
@@ -48,6 +48,13 @@ public class TestCaseLoginCorreto1 {
         driver.findElement(password).sendKeys("password");
         driver.findElement(login_Button).click();
 
+         driver.findElement(By.id("itemSave")).click();
+        /*
+        By save = By.id("android:id/itemSave");
+        Thread.sleep(2000);
+        //System.out.println(save);
+        driver.findElement(save).click();
+        */
 
     }
 }
