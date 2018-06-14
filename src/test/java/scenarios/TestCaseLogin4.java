@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -36,6 +37,11 @@ public class TestCaseLogin4 {
         //other caps
         capabilities.setCapability("app", app.getAbsolutePath());
         driver =  new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+    }
+
+    @AfterTest
+    public void afterTest( ) {
+        driver.quit();
     }
 
     @Test
