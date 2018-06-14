@@ -1,5 +1,6 @@
 package scenarios;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -20,8 +21,8 @@ public class TestCaseLoginFalhado3 {
 
     @BeforeTest
     protected void prepareAndroidForAppium() throws MalformedURLException {
-        //File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
-        File appDir = new File("C:\\Users\\Ruben\\Desktop\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+        File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+        //File appDir = new File("C:\\Users\\Ruben\\Desktop\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
         File app = new File(appDir, "app-debug.apk");
 
         // Capabilites
@@ -52,12 +53,15 @@ public class TestCaseLoginFalhado3 {
         driver.findElement(userId).click();
 
         //By alert = By.id("android:id/alertTitle");
-        Thread.sleep(5000);
-        String result = driver.findElementById("android:name/error_field_required").getText();
+        Thread.sleep(2000);
+        //String result = driver.findElementById("android:name/error_field_required").getText();
 
-        //driver.findElement(alert);
-        //
-        Assert.assertEquals("Este campo é obrigatório",result);
-        //new WebDriverWait(driver, 5);
+
+        String activity = ((AndroidDriver<MobileElement>) driver).currentActivity();
+        System.out.println(activity);
+        Assert.assertEquals("",".Authentication.LoginActivity",activity);
+
+        
+
     }
 }

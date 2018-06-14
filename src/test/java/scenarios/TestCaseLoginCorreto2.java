@@ -1,5 +1,6 @@
 package scenarios;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -20,8 +21,8 @@ public class TestCaseLoginCorreto2 {
 
     @BeforeTest
     protected void prepareAndroidForAppium() throws MalformedURLException {
-        //File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
-        File appDir = new File("C:\\Users\\Ruben\\Desktop\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+        File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+        //File appDir = new File("C:\\Users\\Ruben\\Desktop\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
         File app = new File(appDir, "app-debug.apk");
 
         // Capabilites
@@ -48,13 +49,13 @@ public class TestCaseLoginCorreto2 {
         driver.findElement(password).sendKeys("password");
         driver.findElement(login_Button).click();
 
+         Thread.sleep(2000);
          driver.findElement(By.id("itemSave")).click();
-        /*
-        By save = By.id("android:id/itemSave");
-        Thread.sleep(2000);
-        //System.out.println(save);
-        driver.findElement(save).click();
-        */
 
+         Thread.sleep(2000);
+        String activity = ((AndroidDriver<MobileElement>) driver).currentActivity();
+        System.out.println(activity);
+        Thread.sleep(2000);
+        Assert.assertEquals(".Game.HomeActivity",activity, "NÃO ESTOU NA ACTIVITY ESPERADA!!!");
     }
 }
