@@ -39,7 +39,7 @@ public class TestCaseLoginCorreto2 {
     }
 
     @Test
-    public void testTestCaseLoginFalhado1() throws InterruptedException {
+    public void testTestCaseLoginCorreto2() throws InterruptedException {
         String app_package_name = "pt.ipleiria.teenpowerapp:id/";
         By userId = By.id(app_package_name + "editTextName");
         By password = By.id(app_package_name + "editTextUsername");
@@ -54,7 +54,7 @@ public class TestCaseLoginCorreto2 {
 
          Thread.sleep(2000);
         String activity = ((AndroidDriver<MobileElement>) driver).currentActivity();
-        System.out.println(activity);
+        //System.out.println(activity);
         Thread.sleep(2000);
         Assert.assertEquals(".Game.HomeActivity",activity, "NÃO ESTOU NA ACTIVITY ESPERADA!!!");
     }

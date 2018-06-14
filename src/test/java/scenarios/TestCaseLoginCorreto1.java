@@ -38,7 +38,7 @@ public class TestCaseLoginCorreto1 {
     }
 
     @Test
-    public void testTestCaseLoginFalhado1() throws InterruptedException {
+    public void testTestCaseLoginCorreto1() throws InterruptedException {
         String app_package_name = "pt.ipleiria.teenpowerapp:id/";
         By userId = By.id(app_package_name + "editTextName");
         By password = By.id(app_package_name + "editTextUsername");
