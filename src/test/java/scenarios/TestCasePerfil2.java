@@ -68,6 +68,11 @@ public class TestCasePerfil2 {
         Thread.sleep(2000);
         Assert.assertEquals(".Profile.ProfileActivity",activity2, "NÃO ESTOU NA ACTIVITY ESPERADA!!!");
 
+        driver.swipe(20,20,20,20,3);
+        driver.findElement(By.id("radioButtonFemale")).click();
+        driver.findElement(By.id("itemSave")).click();
+
+
 
     }
 }
