@@ -61,6 +61,6 @@ public class TestCaseLogin4 {
         String activity = ((AndroidDriver<MobileElement>) driver).currentActivity();
         //System.out.println(activity);
         Thread.sleep(2000);
-        Assert.assertEquals(".Game.HomeActivity",activity, "Após o login não faz sentido a app passar pelo Perfil , a não ser que seja o primeiro login do utilizador");
+        Assert.assertEquals(".Game.HomeActivity",activity, "Após o utilizador efetuar o login não faz sentido a app passar sempre pelo Perfil do mesmo, a não ser que seja o primeiro login do utilizador na aplicação");
     }
 }
