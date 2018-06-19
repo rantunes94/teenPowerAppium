@@ -21,8 +21,10 @@ public class TestCaseLoginFalhado2 {
 
     @BeforeTest
     protected void prepareAndroidForAppium() throws MalformedURLException {
-        File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+        //File appDir = new File("C:\\Users\\Ruben\\Desktop\\androidAPP\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
         //File appDir = new File("C:\\Users\\Ruben\\Desktop\\teen_power-android-app-0100bc6841bf\\app\\build\\intermediates\\instant-run-apk\\debug");
+
+        File appDir = new File(" C:\\Projetos\\androidAPP\\app\\build\\intermediates\\instant-run-apk\\debug");
         File app = new File(appDir, "app-debug.apk");
 
         // Capabilites
