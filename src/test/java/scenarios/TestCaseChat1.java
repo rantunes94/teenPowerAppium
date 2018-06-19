@@ -72,7 +72,7 @@ public class TestCaseChat1 {
         driver.findElement(userId).sendKeys("Testes01");
         driver.findElement(password).sendKeys("password");
         driver.findElement(login_Button).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         ///Este botão tem de desaparecer(botão guardar do perfil)
         wait.until(ExpectedConditions.elementToBeClickable(By.id("itemSave")));
         Thread.sleep(2000);
@@ -90,20 +90,67 @@ public class TestCaseChat1 {
         Thread.sleep(1000);
         driver.findElement(By.id("action_search")).click();
         //driver.findElement(userId).sendKeys("Testes02");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
-        List<AndroidElement> profile = driver.findElements(MobileBy.id("listViewContacts"));
-        System.out.println(profile.size());
-        if (!profile.isEmpty()) {
-              profile.get(0).click();
-            //System.out.println(profile.get(1).getText()); // print text in 9th element
-        }
-        Thread.sleep(5000);
+
+
+
+
+        //List <WebElement> list = driver.findElements(By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.FrameLayout[2]/android.view.View/android.widget.ListView[@resource-id='listViewContacts']/android.widget.LinearLayout"));
+        //List <WebElement> list = driver.findElements(By.xpath("//android.widget.ListView[@resource-id='listViewContacts']/android.widget.LinearLayout"));
+        //ConstraintLayout
+        //System.out.println(list.size());
+        //list.get(0).click();
+
+        /*
+
+        WebElement listView = driver.findElement(By.id("listViewContacts"));
+        List <WebElement> allElements = listView.findElements(By.className("android.widget.LinearLayout"));
+
+
+
+            WebElement linhaPretendida = null;
+            for (int i = 0; i<allElements.size();i++) {
+                if(allElements.get(i).getText().contains("Testing")) {
+                    linhaPretendida = allElements.get(i);
+
+                    break;
+                }
+            }
+            System.out.println(linhaPretendida);
+            //linhaPretendida.click();
+
+        */
+
+
+
+
+        //List<MobileElement> listView = driver.findElements(By.id("listViewContacts"));
+        //MobileElement listViewCastedAndroid = (MobileElement) listView;
+        //List<MobileElement> listaItems = listViewCastedAndroid.findElements(By.tagName("li"));
+
+
 
 
         WebElement lista = driver.findElement(By.id("listViewContacts"));
 
-        List<WebElement> linhas = lista.findElements(By.tagName("list"));
+        List<WebElement> linhas = lista.findElements(By.id("android.widget.LinearLayout"));
+        WebElement linhaPretendida = null;
+        for (int i = 0; i<linhas.size();i++) {
+            if(linhas.get(i).getText().contains("Testing")) {
+                linhaPretendida = linhas.get(i);
+                break;
+            }
+        }
+        linhaPretendida.click();
+
+
+
+
+
+
+        //WebElement lista = driver.findElement(By.id("listViewContacts"));
+        //List<WebElement> linhas = lista.findElements(By.tagName("list"));
         //(val list = driver.findElement(By.tagName("list"));
         // linhas.findElements(By.tagName("text");
 
